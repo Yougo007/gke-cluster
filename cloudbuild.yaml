@@ -14,7 +14,7 @@
 
 
 steps:
-- id: 'branch name'
+- id: 'Fetching Branch Name'
   name: 'alpine'
   entrypoint: 'sh'  
   args: 
@@ -24,7 +24,7 @@ steps:
       echo "$BRANCH_NAME"
       echo "***********************"
 
-- id: 'tf init'
+- id: 'Initializing Terraform'
   name: 'hashicorp/terraform:0.14.6'
   entrypoint: 'sh'
   args: 
@@ -50,7 +50,7 @@ steps:
       fi 
 
 # [START tf-plan]
-- id: 'tf plan'
+- id: 'Terraform plan'
   name: 'hashicorp/terraform:0.14.6'
   entrypoint: 'sh'
   args: 
@@ -76,7 +76,7 @@ steps:
 # [END tf-plan]
 
 # [START tf-apply]
-- id: 'tf apply'
+- id: 'Terraform Apply'
   name: 'hashicorp/terraform:0.14.6'
   entrypoint: 'sh'
   args: 
