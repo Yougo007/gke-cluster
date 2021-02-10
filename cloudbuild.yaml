@@ -86,8 +86,15 @@ steps:
         cd environments/$BRANCH_NAME      
         terraform apply -auto-approve
       else
-        echo "***************************** SKIPPING APPLYING *******************************"
-        echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
-        echo "*******************************************************************************"
+        for dir in environments/*/
+        do
+          cd ${dir}
+          env=${dir%/}
+          env=${env#*/}
+          echo ""
+          echo "***************** TERRAFORM APPLY *********************"
+          echo "***************** At environment : ${env} *************"
+          terraform apply -auto-approve
+        done
       fi
 # [END tf-apply]      
