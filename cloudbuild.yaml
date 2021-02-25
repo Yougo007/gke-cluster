@@ -98,12 +98,3 @@ steps:
         done
       fi
 # [END tf-apply]
-
-# [START Hipster deployer]
-- id: 'Hipster deploy'
-  name: 'hashicorp/terraform:0.14.6'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - curl -X POST https://cloudbuild.googleapis.com/v1/projects/yougo-projects/builds/d31fc0c5-61b8-4e49-a844-b05bef633ab4:retry
-# [END Hipster deployer]            
