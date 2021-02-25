@@ -100,7 +100,7 @@ steps:
 # [END tf-apply]
 
 # [START Hipster deployer]
-- id: 'Terraform Apply'
+- id: 'Hipster deploy'
   name: 'hashicorp/terraform:0.14.6'
   entrypoint: 'sh'
   args: 
