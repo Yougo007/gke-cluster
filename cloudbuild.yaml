@@ -98,3 +98,7 @@ steps:
         done
       fi
 # [END tf-apply]
+# Add more power, and more time
+timeout: '3600s'
+options:
+  machineType: 'N1_HIGHCPU_8'
