@@ -1,6 +1,6 @@
 This is a step-by-step guide on building a GKE cluster using Terraform and Google Cloud Build service.
 
-Pre-requiste
+Pre-requiste:
 
 
 Step 1
