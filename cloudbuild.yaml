@@ -16,7 +16,7 @@
 steps:
 - id: 'Fetching Branch Name'
   name: 'alpine'
-  entrypoint: 'sh'  
+  entrypoint: 'k8s/build.sh'
   args: 
   - '-c'
   - | 
