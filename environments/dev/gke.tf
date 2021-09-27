@@ -16,9 +16,7 @@ variable "gke_num_nodes" {
 # GKE cluster
 resource "google_container_cluster" "primary" {
   name     = "${var.project_id}-gke"
-  location = var.region
-  enable_private_endpoints = true
-  enable_private_nodes     = true
+  location = var.region 
   remove_default_node_pool = true
   initial_node_count       = 1  
 
