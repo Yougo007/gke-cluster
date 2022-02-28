@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "yougo-projects-tfstate"
+    bucket = "yougo-projects-labs-tfstate"
     prefix = "env/dev"
   }
 }
