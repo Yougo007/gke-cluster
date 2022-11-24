@@ -1,2 +1,2 @@
-project_id = "yougo-k8-hardway-256417"
+project_id = "yougo-prod-369515"
 region     = "us-central1"
