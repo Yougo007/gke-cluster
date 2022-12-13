@@ -24,30 +24,13 @@ steps:
       echo "$BRANCH_NAME"
       echo "***********************"
 
-- id: 'Initializing Terraform'
+- id: 'Building UAT cluster'
   name: 'hashicorp/terraform:0.14.6'
   entrypoint: 'sh'
   args: 
   - '-c'
   - |
-        cd environments/uat && terraform init
-
-- id: 'Terraform plan'
-  name: 'hashicorp/terraform:0.14.6'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - | 
-      terraform plan -DIR=environments/uat
-
-- id: 'Terraform Apply'
-  name: 'hashicorp/terraform:0.14.6'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - |      
-        terraform apply -auto-approve -DIR=environments/uat
-
+        cd environments/uat && terraform init && terraform plan && terraform apply -auto-approve
 timeout: '3600s'
 options:
     machineType: 'N1_HIGHCPU_8'
