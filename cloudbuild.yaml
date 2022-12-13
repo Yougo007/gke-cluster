@@ -30,7 +30,7 @@ steps:
   args: 
   - '-c'
   - |
-        terraform init -DIR=environments/uat
+        cd environments/uat && terraform init
 
 - id: 'Terraform plan'
   name: 'hashicorp/terraform:0.14.6'
