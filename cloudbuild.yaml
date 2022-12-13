@@ -30,7 +30,7 @@ steps:
   args: 
   - '-c'
   - |
-        terraform init -chdir=environments/uat
+        terraform init -DIR=environments/uat
 
 - id: 'Terraform plan'
   name: 'hashicorp/terraform:0.14.6'
@@ -38,7 +38,7 @@ steps:
   args: 
   - '-c'
   - | 
-      terraform plan -chdir=environments/uat
+      terraform plan -DIR=environments/uat
 
 - id: 'Terraform Apply'
   name: 'hashicorp/terraform:0.14.6'
@@ -46,7 +46,7 @@ steps:
   args: 
   - '-c'
   - |      
-        terraform apply -auto-approve -chdir=environments/uat
+        terraform apply -auto-approve -DIR=environments/uat
 
 timeout: '3600s'
 options:
