@@ -24,81 +24,13 @@ steps:
       echo "$BRANCH_NAME"
       echo "***********************"
 
-- id: 'Initializing Terraform'
+- id: 'Building DEV cluster'
   name: 'hashicorp/terraform:0.14.6'
   entrypoint: 'sh'
   args: 
   - '-c'
   - |
-      if [ -d "environments/$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME
-        ls -lrta
-        terraform init
-      else
-        for dir in environments/*/
-        do 
-          cd ${dir}   
-          env=${dir%*/}
-          env=${env#*/}
-          echo ""
-          echo "*************** TERRAFORM INIT ******************"
-          echo "******* At environment: ${env} ********"
-          echo "*************************************************"
-          terraform init || exit 1
-          cd ../../
-        done
-      fi 
-
-# [START tf-plan]
-- id: 'Terraform plan'
-  name: 'hashicorp/terraform:0.14.6'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - | 
-      if [ -d "environments/$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME
-        terraform plan
-      else
-        for dir in environments/*/
-        do 
-          cd ${dir}   
-          env=${dir%*/}
-          env=${env#*/}  
-          echo ""
-          echo "*************** TERRAFOM PLAN ******************"
-          echo "******* At environment: ${env} ********"
-          echo "*************************************************"
-          terraform plan || exit 1
-          cd ../../
-        done
-      fi 
-# [END tf-plan]
-
-# [START tf-apply]
-- id: 'Terraform Apply'
-  name: 'hashicorp/terraform:0.14.6'
-  entrypoint: 'sh'
-  args: 
-  - '-c'
-  - | 
-      if [ -d "environments/$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME      
-        terraform apply -auto-approve
-      else
-        for dir in environments/*/
-        do
-          cd ${dir}
-          env=${dir%/}
-          env=${env#*/}
-          echo ""
-          echo "***************** TERRAFORM APPLY *********************"
-          echo "***************** At environment : ${env} *************"
-          terraform apply -auto-approve
-        done
-      fi
-# [END tf-apply]
-# Add more power, and more time
+      cd environments/dev && terraform init && terraform plan && terrform apply -auto-approve
 timeout: '3600s'
 options:
   machineType: 'N1_HIGHCPU_8'
