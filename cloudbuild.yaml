@@ -30,7 +30,7 @@ steps:
   args: 
   - '-c'
   - |
-      cd environments/dev && terraform init && terraform plan && terrform apply -auto-approve
+      cd environments/dev && terraform init && terraform plan && terraform apply -auto-approve
 timeout: '3600s'
 options:
   machineType: 'N1_HIGHCPU_8'
