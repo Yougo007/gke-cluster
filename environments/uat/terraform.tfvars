@@ -1,3 +1,3 @@
-project_id = "yougo-k8-hardway-256417"
+project_id = "uat-cluster-371515"
 region     = "us-central1"
 cluster_name = "uat-cluster"
