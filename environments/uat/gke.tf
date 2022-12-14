@@ -14,7 +14,7 @@ variable "gke_num_nodes" {
 }
 
 variable "cluster_name" {
-  default = uat-cluster
+  default = "uat-cluster"
   description = "cluster name"
 }
 
