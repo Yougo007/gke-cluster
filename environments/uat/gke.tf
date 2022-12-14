@@ -13,6 +13,11 @@ variable "gke_num_nodes" {
   description = "number of gke nodes"
 }
 
+variable "cluster_name" {
+  default = uat-cluster
+  description = "cluster name"
+}
+
 # GKE cluster
 resource "google_container_cluster" "primary" {
   name     = var.cluster_name
