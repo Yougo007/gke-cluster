@@ -15,7 +15,7 @@ variable "gke_num_nodes" {
 
 # GKE cluster
 resource "google_container_cluster" "primary" {
-  name     = "ugo-prod-cluster"
+  name     = "prod-cluster"
   location = var.region 
   remove_default_node_pool = true
   initial_node_count       = 1  
