@@ -1,2 +1,2 @@
 project_id = "yougo-dev-369515"
-region     = "us-west1"
+region     = "us-central1"
