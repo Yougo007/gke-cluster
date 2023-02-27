@@ -1,24 +1,4 @@
-This is a step-by-step guide on building a GKE cluster using Terraform and Google Cloud Build service.
-
-Pre-requiste:
-	i.  Cloud build triggers
-        ii. Cloud build service account IAM permission
-        iii.
-       
-Step 1
+GitOps & IaC: Deploying GKE clusters using Terraform & Google Cloud build
 
 
-
-Step 2
-
-
-
-Step 3
-
-
-
-Step 4
-
-
-
-
+Detailed step-by-step can be found https://medium.com/@ugochukwu007/iac-gitops-gke-provisioning-with-terraform-google-cloud-build-e5a3fbc50c02
